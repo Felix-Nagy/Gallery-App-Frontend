@@ -1,0 +1,14 @@
+img{
+  height: 276px;
+  width: 470px;
+}
+p{
+  width: 470px
+}
+#upvotes{
+  float: right;
+}
+#entry{
+  padding: 20px;
+}
+#entry{}

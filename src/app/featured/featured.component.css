@@ -1,0 +1,21 @@
+#brand {
+  font-size: 2em;
+  margin-right: 10em;
+}
+
+#search {
+  border-radius: 20px;
+  margin-right: 15em;
+}
+
+#navbar {
+  margin-top: 3em;
+}
+
+.tag{
+  padding-left: 2em;
+  padding-right: 2em;
+  cursor: pointer;
+}
+
+
