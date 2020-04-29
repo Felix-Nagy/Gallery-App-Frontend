@@ -1,9 +1,11 @@
 img{
-  height: 276px;
   width: 470px;
 }
 p{
   width: 470px
+}
+#symbol{
+  float: right;
 }
 #upvotes{
   float: right;

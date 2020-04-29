@@ -1,14 +1,11 @@
 
-<app-gallery-detail></app-gallery-detail>
-
-<div id="grid">
-  <app-gallery-item></app-gallery-item>
-  <app-gallery-item></app-gallery-item>
-  <app-gallery-item></app-gallery-item>
-  <app-gallery-item></app-gallery-item>
-  <app-gallery-item></app-gallery-item>
-  <app-gallery-item></app-gallery-item>
-  <app-gallery-item></app-gallery-item>
+<app-loading-spinner *ngIf="isLoading"  style="position: absolute; top:50%; left: 50%"></app-loading-spinner>
+<div *ngIf="!isLoading" id="grid">
+  <app-gallery-item
+    *ngFor="let imageEl of images; let i=index"
+    [image]="imageEl"
+    [index] ="i"
+  ></app-gallery-item>
 </div>
 
 <div class="row">

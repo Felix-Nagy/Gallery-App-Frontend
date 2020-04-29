@@ -15,6 +15,9 @@ import { FeaturedComponent } from './featured/featured.component';
 import { GalleryListComponent } from './gallery/gallery-list/gallery-list.component';
 import { GalleryItemComponent } from './gallery/gallery-list/gallery-item/gallery-item.component';
 import {AlertComponent} from "./shared/alert/alert.component";
+import {ImageService} from "./gallery/image.service";
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
+import {AuthInterceptorService} from "./auth/auth-interceptor";
 
 
 @NgModule({
@@ -29,7 +32,9 @@ import {AlertComponent} from "./shared/alert/alert.component";
     FeaturedComponent,
     GalleryListComponent,
     GalleryItemComponent,
-    AlertComponent
+    AlertComponent,
+    LoadingSpinnerComponent,
+
 
   ],
   imports: [
@@ -39,7 +44,12 @@ import {AlertComponent} from "./shared/alert/alert.component";
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ImageService,
+    {
+     provide: HTTP_INTERCEPTORS,
+     useClass: AuthInterceptorService,
+     multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
